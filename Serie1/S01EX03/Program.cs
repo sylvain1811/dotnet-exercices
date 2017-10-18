@@ -11,7 +11,7 @@ namespace S01EX03
     {
         static void Main(string[] args)
         {
-            FileStream fileStream = new FileStream(@"C:\Users\sylvain.renaud\Documents\DotNET\Exercices\Serie1\S01EX03\Mesures.txt", FileMode.Open);
+            FileStream fileStream = new FileStream(@"..\..\Mesures.txt", FileMode.Open);
             StreamReader reader = new StreamReader(fileStream);
 
             List<int> mesures = new List<int>();
