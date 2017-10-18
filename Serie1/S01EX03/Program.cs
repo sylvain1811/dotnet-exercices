@@ -25,13 +25,13 @@ namespace S01EX03
             {
                 if (i < 10)
                 {
-                    Console.Write(mesure + ", ");
+                    Console.Write($"{mesure}, ");
                     i++;
                 }
                 else
                 {
                     i = 0;
-                    Console.WriteLine(mesure + ", ");
+                    Console.WriteLine($"{mesure}, ");
                 }
             }
             Console.WriteLine();
