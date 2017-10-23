@@ -1,2 +1,2 @@
-# dotnet-exercices
-Exercices of the DotNET course at HE-Arc
+# .NET Exercices
+Exercices of the .NET course at HE-Arc
