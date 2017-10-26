@@ -45,7 +45,7 @@ namespace S01EX02
             int fin = DateTime.Now.Millisecond;
             int tempsPasse = fin - debut;
 
-            Console.WriteLine("Itérations : " + cpt + "\nErreur résiduelle : " + Math.Abs(sqrt - x1) + "\nTemps passé : " + tempsPasse);
+            Console.WriteLine("Itérations : " + cpt + "\nErreur résiduelle : " + Math.Abs(sqrt - x1) + "\nTemps passé : " + tempsPasse + " ms");
             Console.ReadKey();
         }
     } 

@@ -21,19 +21,19 @@ namespace S01EX01
             {
                 return Math.Sqrt(X * X + Y * Y + Z * Z);
             }
+
+            public override string ToString()
+            {
+                return "(" + X + ";" + Y + ";" + Z + "), Distance O : " + DistanceToOrigin();
+            }
         }
 
 
         static void SwapPoints(ref Point3D a, ref Point3D b)
         {
-            Point3D tmp = new Point3D(a.X, a.Y, a.Z);
-            a.X = b.X;
-            a.Y = b.Y;
-            a.Z = b.Z;
-
-            b.X = tmp.X;
-            b.Y = tmp.Y;
-            b.Z = tmp.Z;
+            Point3D tmp = a;
+            a = b;
+            b = tmp;
         }
 
         static void Main(string[] args)
@@ -41,13 +41,13 @@ namespace S01EX01
             Point3D a = new Point3D(1.1, 2.2, 3.3);
             Point3D b = new Point3D(4.4, 5.5, 6.6);
 
-            Console.WriteLine("A (" + a.X + ";" + a.Y + ";" + a.Z + "), Distance O : " + a.DistanceToOrigin());
-            Console.WriteLine("B (" + b.X + ";" + b.Y + ";" + b.Z + "), Distance O : " + b.DistanceToOrigin());
+            Console.WriteLine("A " + a.ToString());
+            Console.WriteLine("B " + b.ToString());
 
             SwapPoints(ref a, ref b);
 
-            Console.WriteLine("A (" + a.X + ";" + a.Y + ";" + a.Z + "), Distance O : " + a.DistanceToOrigin());
-            Console.WriteLine("B (" + b.X + ";" + b.Y + ";" + b.Z + "), Distance O : " + b.DistanceToOrigin());
+            Console.WriteLine("A " + a.ToString());
+            Console.WriteLine("B " + b.ToString());
             Console.ReadKey();
         }
     }

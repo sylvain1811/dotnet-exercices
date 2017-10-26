@@ -23,7 +23,7 @@ namespace S01EX03
             int i = 0;
             foreach (int mesure in mesures)
             {
-                if (i < 10)
+                if (i < 9)
                 {
                     Console.Write($"{mesure}, ");
                     i++;
