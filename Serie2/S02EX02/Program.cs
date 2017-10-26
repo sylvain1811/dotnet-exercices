@@ -13,23 +13,23 @@ namespace S02EX02
             BoardGame boardGame = new BoardGame();
 
             Console.WriteLine("THE BOARDGAME");
-
             Console.WriteLine(boardGame.ToString());
 
-            Console.WriteLine("\nTHE PAWNS");
-
+            Console.WriteLine("THE PAWNS");
+            StringBuilder pawns = new StringBuilder();
             for (int i = 1; i <= boardGame.PawnNumber; i++)
             {
-                Console.Write(i + ":" + boardGame[i] + ", ");
+                pawns.Append(i);
+                pawns.Append(":");
+                pawns.Append(boardGame[i]);
+                if (i < boardGame.PawnNumber)
+                {
+                    pawns.Append(", ");
+                }
             }
-
-
-
-
-
+            Console.WriteLine(pawns.ToString());
 
             Console.ReadKey();
-
         }
     }
 }

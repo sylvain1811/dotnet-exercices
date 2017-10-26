@@ -10,7 +10,7 @@ namespace S01EX01
     {
         struct Point3D
         {
-            public double X, Y, Z;
+            private double X, Y, Z;
             public Point3D(double X, double Y, double Z)
             {
                 this.X = X;

@@ -23,18 +23,18 @@ namespace S01EX03
             int i = 0;
             foreach (int mesure in mesures)
             {
+                Console.Write($"{mesure}");
                 if (i < 9)
-                {
-                    Console.Write($"{mesure}, ");
+                { 
+                    Console.Write(",");
                     i++;
                 }
                 else
                 {
                     i = 0;
-                    Console.WriteLine($"{mesure}, ");
+                    Console.Write("\n");
                 }
             }
-            Console.WriteLine();
             Console.ReadKey();
         }
     }

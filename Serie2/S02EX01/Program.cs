@@ -27,15 +27,15 @@ namespace S02EX01
             {
                 Console.WriteLine("Erreur de format : " + e1.Message);
             }
-            catch(OverflowException e2)
+            catch (OverflowException e2)
             {
                 Console.WriteLine("Overflow : " + e2.Message);
             }
-            catch(DivideByZeroException e3)
+            catch (DivideByZeroException e3)
             {
                 Console.WriteLine("Division par 0 : " + e3.Message);
             }
             Console.ReadLine();
-            }
         }
     }
+}
