@@ -10,6 +10,26 @@ namespace S02EX02
     {
         static void Main(string[] args)
         {
+            BoardGame boardGame = new BoardGame();
+
+            Console.WriteLine("THE BOARDGAME");
+
+            Console.WriteLine(boardGame.ToString());
+
+            Console.WriteLine("\nTHE PAWNS");
+
+            for (int i = 1; i <= boardGame.PawnNumber; i++)
+            {
+                Console.Write(i + ":" + boardGame[i] + ", ");
+            }
+
+
+
+
+
+
+            Console.ReadKey();
+
         }
     }
 }
