@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace S02EX02
 {
-    class BoardGame : IEnumerable<char> 
+    class BoardGame : IEnumerable<char>
     {
         private int slotNumber = 26;
         public int SlotNumber
@@ -22,7 +22,8 @@ namespace S02EX02
         }
         public bool this[char slot] // indexeur
         {
-            get {
+            get
+            {
                 if (dictionary.Keys.ElementAt(slot) != 0)
                 {
                     return true;
@@ -33,7 +34,8 @@ namespace S02EX02
 
         public char this[int pawn] // indexeur
         {
-            get {
+            get
+            {
                 foreach (KeyValuePair<char, int> kvp in dictionary)
                 {
                     if (kvp.Value == pawn)
@@ -62,8 +64,28 @@ namespace S02EX02
             }
         }
 
-        
+
         IEnumerator<char> IEnumerable<char>.GetEnumerator()
+        {
+            return (IEnumerator<char>)this.GetEnumerator();
+        }
+
+        public override string ToString()
+        {
+            string ligne1 = "", ligne2 = "";
+            foreach (KeyValuePair<char, int> kvp in dictionary)
+            {
+                ligne1 += kvp.Key.ToString();
+                if (kvp.Value != 0)
+                {
+                    ligne2 += "X";
+                }
+                else ligne2 += " ";
+            }
+            return ligne1 + "\n" + ligne2;
+        }
+
+        public IEnumerator GetEnumerator()
         {
             // dictionary.GetEnumerator();
             List<char> list = new List<char>(pawnNumber);
@@ -75,34 +97,6 @@ namespace S02EX02
                 }
             }
             return list.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            List<char> list = new List<char>(pawnNumber);
-            foreach (KeyValuePair<char, int> kvp in dictionary)
-            {
-                if (kvp.Value != 0)
-                {
-                    list.Add(kvp.Key);
-                }
-            }
-            return list.GetEnumerator();
-        }
-
-        public override string ToString()
-        {
-            string ligne1 = "", ligne2 = "";
-            foreach(KeyValuePair<char, int> kvp in dictionary)
-            {
-                ligne1 += kvp.Key.ToString();
-                if (kvp.Value != 0)
-                {
-                    ligne2 += "X";
-                }
-                else ligne2 += " ";
-            }
-            return ligne1 + "\n"+ligne2;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace S02EX02
             Console.WriteLine(boardGame.ToString());
 
             Console.WriteLine("THE PAWNS");
+
             StringBuilder pawns = new StringBuilder();
             for (int i = 1; i <= boardGame.PawnNumber; i++)
             {
@@ -28,6 +29,11 @@ namespace S02EX02
                 }
             }
             Console.WriteLine(pawns.ToString());
+
+            foreach (var v in boardGame)
+            {
+                Console.WriteLine(v);
+            }
 
             Console.ReadKey();
         }
