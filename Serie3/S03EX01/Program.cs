@@ -141,7 +141,7 @@ namespace S03EX01
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             Console.Write(bravo);
                             Console.ResetColor();
-                            Console.Write($"\r\nMot trouvé en {nbEssais} essais.");
+                            Console.Write($"\r\nMot trouvé en {nbEssais} essais : {mot}");
 
                             if (record)
                                 Console.Write(" (nouveau record)\n");
@@ -176,14 +176,24 @@ namespace S03EX01
             Console.WriteLine("------------------");
             Console.WriteLine("   Charger mots   ");
             Console.WriteLine("------------------");
-            Console.Write("\nEntrer le nom du fichier : ");
+            Console.Write("\nEntrer le nom du fichier (avec l'extension) : ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             string fileName = Console.ReadLine();
             Console.ResetColor();
 
             try
             {
-                mots = System.IO.File.ReadAllLines(fileName);
+
+                string[] lines = System.IO.File.ReadAllLines(fileName);
+                List<string> listMots = new List<string>(lines.Length);
+                foreach (var mot in lines)
+                {
+                    if (mot.Trim().Length > 0)
+                    {
+                        listMots.Add(mot);
+                    }
+                }
+                mots = listMots.ToArray();
                 Console.WriteLine($"\n{mots.Length} mots chargés avec succès !\n");
                 scores = new Dictionary<string, int>(mots.Length);
                 foreach (var mot in mots)
